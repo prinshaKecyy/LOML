@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ❤️</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="heart">❤️</div>
+    <p>Loading something special…</p>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Happyy Birthdayy Krishchal ❤️</h1>
+  <p>You will always mean something special.</p>
+  <span class="scroll">↓ Scroll slowly</span>
+</section>
+
+<!-- PHOTOS -->
+<section class="photos">
+  <h2>Some memories I still hold close 🤍</h2>
+  <div class="gallery">
+    <img src="photos/1.jpg">
+    <img src="photos/2.jpg">
+    <img src="photos/3.jpg">
+    <img src="photos/4.jpg">
+    <img src="photos/5.jpg">
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section class="message">
+  <div class="card">
+    <p>Happyy birthdayy mr.aaluu ❤️<br>God bless youu!!</p>
+
+    <p>
+      Thankyou for alwyz being thereee.<br>
+      Thankyou for treating me like a queen.<br>
+      Thankyou for everything. 😔❤️
+    </p>
+
+    <p>
+      I am sryyyy for everythinggg tooo.<br>
+      I miss ussss.. 😌<br>
+      I hope you're doing well.<br>
+      Alwyz do good in your life.
+    </p>
+
+    <p>
+      I hope you're happyyy.<br>
+      Mayy god bless you with all the happiness you deserve.<br>
+      Mero vaag ko khusi ni tmlai nei jawosss…<br>
+      kaileee paxii naparnuu.. ❤️‍🩹
+    </p>
+
+    <p>
+      When everyone were against me, you were against everyone.<br>
+      Aja mero galti le hami tadiyemm…<br>
+      malaii maaf gardeunaaa please! 🙏
+    </p>
+
+    <p>
+      Abha ta tme bina sakdina yarr.<br>
+      Harek paal harek kura ma tmro yaad aunxa. ☹️
+    </p>
+
+    <p>
+      The way you felt happyyyy after talking with mee.<br>
+      Mero harek dukha ma ni sath deko ma<br>
+      dherai dheraii thankyouu.
+    </p>
+
+    <p>
+      Once again happiest birthdayyy Krishchal ❤️<br>
+      I realize everything. Its all my fault, please.
+    </p>
+
+    <p>
+      Abhaa sakdinaaa oi tme binaa please! 😞<br>
+      I am reallyy sryyy for everything… ❤️‍🩹
+    </p>
+
+    <p class="ending">
+      Happiest birthdayyy saneyyy 😌❤️<br>
+      I misss youu… and I lovee youuu. ❤️‍🩹
+    </p>
+
+    <div class="next-btn">
+      <a href="#question" class="btn yes">One last question…</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION -->
+<section class="question" id="question">
+  <h2>Can we give our relationship one more chance? 😞</h2>
+
+  <div class="buttons">
+    <a class="btn yes"
+       href="mailto:Kecyyprinsha@gmail.com?subject=My Answer&body=Yes, I want to give us another chance.">
+       Yes ❤️
+    </a>
+
+    <a class="btn no"
+       href="mailto:Kecyyprinsha@gmail.com?subject=My Answer&body=I’m sorry, I don’t think we should get back together.">
+       No 💔
+    </a>
+  </div>
+
+  <p class="note">No pressure. Just honesty.</p>
+</section>
+
+<footer>
+  <p>Always wishing the best for you 🤍</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  // LOADER
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.display = "none", 800);
+  });
+
+  // MUSIC
+  const music = document.getElementById("bgMusic");
+  const btn = document.querySelector(".music-btn");
+  let playing = false;
+
+  function toggleMusic() {
+    if (!playing) {
+      music.play();
+      btn.textContent = "⏸ Pause Music";
+    } else {
+      music.pause();
+      btn.textContent = "🎵 Play Music";
+    }
+    playing = !playing;
+  }
+
+  
+  // PARTICLES
+  const particlesContainer = document.getElementById("particles");
+  const symbols = ["❤️", "🤍", "🌸"];
+
+  function createParticle() {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+
+    particle.style.left = Math.random() * 100 + "vw";
+    particle.style.fontSize = Math.random() * 14 + 10 + "px";
+    particle.style.animationDuration = Math.random() * 8 + 10 + "s";
+
+    particlesContainer.appendChild(particle);
+
+    setTimeout(() => {
+      particle.remove();
+    }, 20000);
+  }
+
+  setInterval(createParticle, 800);
+
+</script>
+
+</body>
+</html>
